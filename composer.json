@@ -1,0 +1,25 @@
+{
+    "name": "eccube2/plugin-installer",
+    "description": "EC-CUBE Plugin Installer for Composer.",
+    "type": "composer-plugin",
+    "license": "LGPL-3.0",
+    "authors": [
+        {
+            "name": "Tsuyoshi Tsurushima"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Eccube2\\": "src/Eccube2/"}
+    },
+    "extra": {
+        "class": "Eccube2\\Composer\\Installers\\Plugin"
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "composer-plugin-api": "^1.0",
+        "composer/installers": "^1.0"
+    },
+    "require-dev": {
+        "composer/composer": "^1.0"
+    }
+}
