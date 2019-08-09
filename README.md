@@ -79,7 +79,7 @@ Git で管理する場合には適切なバージョンの tag をつければ P
         }
     ],
     "require": {
-        "eccube2/plugin-installer": "2.13.*"
+        "eccube2/plugin-installer": "^1.0"
     }
 }
 ```
@@ -110,7 +110,7 @@ Git で管理する場合には適切なバージョンの tag をつければ P
         }
     ],
     "require": {
-        "eccube2/plugin-installer": "2.13.*"
+        "eccube2/plugin-installer": "^1.0"
     }
 }
 ```
