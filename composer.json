@@ -1,5 +1,5 @@
 {
-    "name": "eccube2/plugin-installer",
+    "name": "ec-cube2/plugin-installer",
     "description": "EC-CUBE2 Plugin / Module Installer for Composer.",
     "type": "composer-plugin",
     "license": "LGPL-3.0",

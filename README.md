@@ -2,19 +2,19 @@
 
 EC-CUBE2 の Plugin / Module を Composer で管理できるようになります。
 
-EC-CUBE2への実際のインストールなどは分離しました。`eccube2/cli` を利用してください。
+EC-CUBE2への実際のインストールなどは分離しました。`ec-cube2/cli` を利用してください。
 
 ## Installation / Usage
 
 ### 1. コマンドを実行するか `composer.json` を編集してください
 
-例) ExamplePlugin ( `eccube2/example_plugin` ) をインストールする場合
+例) ExamplePlugin ( `ec-cube2-plugin/example_plugin` ) をインストールする場合
 
 以下のようにコマンドを実行してください。  
 もちろん、プラグインのバージョン指定も可能です。
 
 ```sh
-$ composer require eccube2/example_plugin
+$ composer require ec-cube2-plugin/example_plugin
 ```
 
 以下のようにEC-CUBEのルートディレクトリの `composer.json` を編集してください。  
@@ -23,7 +23,7 @@ $ composer require eccube2/example_plugin
 ```json
 {
     "require": {
-        "eccube2/example_plugin": "*"
+        "ec-cube2-plugin/example_plugin": "*"
     },
     "require-dev": {
         "satooshi/php-coveralls": "dev-master",
@@ -67,7 +67,7 @@ Git で管理する場合には適切なバージョンの tag をつければ P
 
 ```json
 {
-    "name": "eccube2/example_plugin",
+    "name": "ec-cube2-plugin/example_plugin",
     "description": "サンプルプラグイン",
     "type": "eccube2-plugin",
     "license": "LGPL",
@@ -79,7 +79,7 @@ Git で管理する場合には適切なバージョンの tag をつければ P
         }
     ],
     "require": {
-        "eccube2/plugin-installer": "^1.0"
+        "ec-cube2/plugin-installer": "^1.0"
     }
 }
 ```
@@ -98,7 +98,7 @@ Git で管理する場合には適切なバージョンの tag をつければ P
 
 ```json
 {
-    "name": "eccube2/mdl_example",
+    "name": "ec-cube2-module/mdl_example",
     "description": "サンプルモジュール",
     "type": "eccube2-module",
     "license": "LGPL",
@@ -110,7 +110,7 @@ Git で管理する場合には適切なバージョンの tag をつければ P
         }
     ],
     "require": {
-        "eccube2/plugin-installer": "^1.0"
+        "ec-cube2/plugin-installer": "^1.0"
     }
 }
 ```
