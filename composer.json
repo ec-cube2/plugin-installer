@@ -2,7 +2,7 @@
     "name": "ec-cube2/plugin-installer",
     "description": "EC-CUBE2 Plugin / Module Installer for Composer.",
     "type": "composer-plugin",
-    "license": "LGPL-3.0",
+    "license": "MIT",
     "authors": [
         {
             "name": "Tsuyoshi Tsurushima"

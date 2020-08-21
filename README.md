@@ -1,6 +1,6 @@
-# EC-CUBE2 Plugin / Module Installer for Composer
+# EC-CUBE2 Installer for Composer
 
-EC-CUBE2 の Plugin / Module を Composer で管理できるようになります。
+EC-CUBE2 の Plugin / Module / Template を Composer で管理できるようになります。
 
 EC-CUBE2への実際のインストールなどは分離しました。`ec-cube2/cli` を利用してください。
 
@@ -20,7 +20,7 @@ $ composer require ec-cube2-plugin/example_plugin
 以下のようにEC-CUBEのルートディレクトリの `composer.json` を編集してください。  
 `require-dev` はテストを実行しない場合、記載は不要です。
 
-```json
+```
 {
     "require": {
         "ec-cube2-plugin/example_plugin": "*"
@@ -34,12 +34,13 @@ $ composer require ec-cube2-plugin/example_plugin
 
 パスを変更したい場合
 
-```json
+```
 {
     "extra": {
         "installer-paths": {
-             "data/downloads/plugin/{$name}/": ["type:eccube2-plugin"],
-             "data/downloads/module/{$name}/": ["type:eccube2-module"]
+            "data/downloads/plugin/{$name}/": ["type:eccube2-plugin"],
+            "data/downloads/module/{$name}/": ["type:eccube2-module"],
+            "data/Smarty/templates/{$name}/": ["type:eccube2-template"]
         }
     }
 }
@@ -60,12 +61,12 @@ $ composer install --no-dev
 ### プラグイン用 composer.json
 
 以下のように準備してください。
-Packagist に登録する場合、 `eccube2` 部分はあなた専用の Namespace を指定する必要があります。  
+Packagist に登録する場合、 `ec-cube2-plugin` 部分はあなた専用の Namespace を指定する必要があります。  
 `example_plugin` 部分は小文字で指定する必要があります。インストール時に ExamplePlugin のように CamelCase に変換されます。
 
 Git で管理する場合には適切なバージョンの tag をつければ Packagist が自動で認識してくれます。
 
-```json
+```
 {
     "name": "ec-cube2-plugin/example_plugin",
     "description": "サンプルプラグイン",
@@ -85,18 +86,17 @@ Git で管理する場合には適切なバージョンの tag をつければ P
 ```
 
 
-
 ### モジュール用 composer.json
 
 以下のように準備してください。
-Packagist に登録する場合、 `ec-cube-plugin` 部分はあなた専用の Namespace を指定する必要があります。  
+Packagist に登録する場合、 `ec-cube2-module` 部分はあなた専用の Namespace を指定する必要があります。  
 `mdl_example` 部分が、モジュールの code になります。他のモジュールと重複しない必要があります。
 
 Git で管理する場合には適切なバージョンの tag をつければ Packagist が自動で認識してくれます。
 
 ※オーナーズストア経由で導入したモジュールと同一もモジュールをインストールすると動作に影響する可能性があります。
 
-```json
+```
 {
     "name": "ec-cube2-module/mdl_example",
     "description": "サンプルモジュール",
@@ -115,17 +115,34 @@ Git で管理する場合には適切なバージョンの tag をつければ P
 }
 ```
 
+
+### テンプレート用 composer.json
+
+以下のように準備してください。
+Packagist に登録する場合、 `ec-cube-plugin` 部分はあなた専用の Namespace を指定する必要があります。  
+`sample` 部分が、テンプレートの code になります。他のテンプレートと重複しない必要があります。
+
+Git で管理する場合には適切なバージョンの tag をつければ Packagist が自動で認識してくれます。
+
+```
+{
+    "name": "ec-cube2-template/sample",
+    "description": "サンプルテンプレート",
+    "type": "eccube2-template",
+    "license": "LGPL",
+    "homepage": "http://www.example.com/",
+    "authors": [
+        {
+            "name": "Tsuyoshi Tsurushima",
+            "homepage": "http://www.example.com/"
+        }
+    ],
+    "require": {
+        "ec-cube2/plugin-installer": "^1.0"
+    }
+}
+```
+
 ## Requirements
 
 PHP 5.3.3 以上
-
-
-## Author
-
-Tsuyoshi Tsurushima
-
-
-## License
-
-EC-CUBE Plugin / Module Composer Installer は LGPL-3.0 でライセンスされています。 - LICENSE ファイルに詳細の記載があります。  
-EC-CUBE Plugin / Module Composer Installer is licensed under the LGPL-3.0 License - see the LICENSE file for details.

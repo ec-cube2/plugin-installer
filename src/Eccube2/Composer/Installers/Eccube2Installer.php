@@ -9,6 +9,7 @@ class Eccube2Installer extends BaseInstaller
     protected $locations = array(
         'plugin' => 'data/downloads/plugin/{$name}/',
         'module' => 'data/downloads/module/{$name}/',
+        'template' => 'data/Smarty/templates/{$name}/',
     );
 
     /**
@@ -16,7 +17,7 @@ class Eccube2Installer extends BaseInstaller
      */
     public function inflectPackageVars($vars)
     {
-        if ($this->package->getType() === 'eccube2-module') {
+        if ($this->package->getType() === 'eccube2-module' || $this->package->getType() === 'eccube2-template') {
             return $vars;
         }
 
